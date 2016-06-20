@@ -42,7 +42,7 @@ RUN \
   cd /pushpin && \
   cp examples/config/* . && \
   sed -i -e 's/ localhost:80/,replace_beg=\/stream app:3000/' routes && \
-  sed -i -e 's/push_in_http_addr=127.0.0.1/push_in_http_addr=0.0.0.0/' pushpin.conf
+  sed -i -e 's/push_in_http_addr=127.0.0.1/push_in_http_addr=0.0.0.0/' -e 's/auto_cross_origin=false/auto_cross_origin=true/' pushpin.conf
 
 # Cleanup
 RUN \
